@@ -1,0 +1,16 @@
+1. php artisan tinker
+$dokter = App\Models\User::where('role', 'dokter')->first();
+$dokter->jadwalPeriksas; // hasilnya: semua jadwal milik dokter ini
+$pasien = App\Models\User::where('id', '3')->first();
+$pasien->janjiPeriksas; // hasilnya: janji periksa milik pasien
+$jadwal = App\Models\JadwalPeriksa::first();
+$jadwal->dokter->nama; // nama dokternya
+$janji = App\Models\JanjiPeriksa::first();
+$janji->pasien->nama;      // nama pasien
+$janji->jadwal->hari;      // hari jadwal
+$janji->periksa; // hasilnya: data periksa dari janji ini
+$periksa = App\Models\Periksa::first();
+$periksa->detailPeriksas; // daftar obat dalam periksa
+$detail = App\Models\DetailPeriksa::first();
+$detail->obat->nama_obat; // nama obat
+
