@@ -12,14 +12,14 @@ protected $fillable = [
     'hari',
     'jam_mulai',
     'jam_selesai',
-
+    'status',
 ];
 
 public function dokter()
 {
     return $this->belongsTo(User::class, 'id_dokter');
 }
-public function janjiPeriksa()
+public function janjiPeriksas()
 {
     return $this->hasMany(JanjiPeriksa::class, 'id_jadwal');
 }
